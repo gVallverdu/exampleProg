@@ -1,128 +1,38 @@
-\documentclass{article}
+\documentclass[a4paper, 11pt, fleqn]{book}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[francais]{babel}
-\AtBeginDocument{\renewcommand\labelitemi{$\bullet$}}
-\AtBeginDocument{\renewcommand\labelitemii{$\circ$}}
+\usepackage{preambule}
 
-\usepackage[top = 2.5cm, left = 2cm, right = 2cm, bottom = 2cm]{geometry}
+% info document
+\title{Programming from examples}
+\author{Germain Vallverdu}
+\date{\today}
+\institute{Universit\'e de Pau et des Pays de l'Adour, IPREM - ECP CNRS UMR 5254\\
+H\'elioparc Pau-Pyr\'en\'ees, 2 av. du Pr\'esident Angot\\ 64053 Pau cedex 9, France}
+\email{\url{germain.vallverdu@univ-pau.fr}}
 
-% ------------------------------------------------
-% minted package
-% ------------------------------------------------
-
-\usepackage{minted}
-
-%\usemintedstyle{friendly}
-\usemintedstyle{default}
-
-%Styles:
-%~~~~~~~
-%* monokai:
-    %This style mimics the Monokai color scheme.
-%* manni:
-    %A colorful style, inspired by the terminal highlighting style.
-%* rrt:
-    %Minimalistic "rrt" theme, based on Zap and Emacs defaults.
-%* perldoc:
-    %Style similar to the style used in the perldoc code blocks.
-%* borland:
-    %Style similar to the style used in the borland IDEs.
-%* colorful:
-    %A colorful style, inspired by CodeRay.
-%* default:
-    %The default style (inspired by Emacs 22).
-%* murphy:
-    %Murphy's style from CodeRay.
-%* vs:
-    
-%* trac:
-    %Port of the default trac highlighter design.
-%* tango:
-    %The Crunchy default Style inspired from the color palette from the Tango Icon Theme Guidelines.
-%* fruity:
-    %Pygments version of the "native" vim theme.
-%* autumn:
-    %A colorful style, inspired by the terminal highlighting style.
-%* bw:
-    
-%* emacs:
-    %The default style (inspired by Emacs 22).
-%* vim:
-    %Styles somewhat like vim 7.0
-%* pastie:
-    %Style similar to the pastie default style.
-%* friendly:
-    %A modern style based on the VIM pyte theme.
-%* native:
-    %Pygments version of the "native" vim theme.
-
-\newcommand{\codeAlgobox}[3]{%
-    \renewcommand\listingscaption{Algorithme}
-    \begin{listing}[H]
-        \inputminted[linenos, 
-                     stepnumber = 1,
-                     bgcolor = black!5,
-                     fontsize = \footnotesize,
-                     samepage]{algobox}{#1}%
-        \caption{#2}
-        \label{lst:#3}
-    \end{listing}
-}%
-
-
-% ------------------------------------------------
-% ------------------------------------------------
 \begin{document}
 
-\section{Lire / écrire / calculer}
+\maketitle
 
-\codeAlgobox{algo_txt/aire_rectangle.algo}{Calcul de l'aire d'un rectangle.}{aire_rec}
-\codeAlgobox{algo_txt/reste.algo}{Calcul du reste de la division de deux entiers.}{reste}
-\codeAlgobox{algo_txt/perimetre.algo}{Calcul du pérmiètre d'un cercle connaissant son
-rayon.}{perimetre}
+{
+    \singlespacing
+    \tableofcontents
+}
+\newpage
+\thispagestyle{plain}
 
-\section{Faire une condition}
+\include{exercices}
 
-\codeAlgobox{algo_txt/le_plus_grand.algo}{Affiche le nombre le plus grand.}{le_plus_grand}
-\codeAlgobox{algo_txt/discriminent.algo}{Calcul des racines d'un polynôme de degré
-2.}{discriminent}
-\codeAlgobox{algo_txt/racine_x.algo}{Calcul de la racine carré d'un nombre s'il est
-positif.}{racine}
+\include{algobox}
 
-\section{Répéter une action}
+\include{fortran}
 
-\codeAlgobox{algo_txt/calc_val_fonction_1.algo}{Utilisation d'une boucle POUR pour
-calculer les valeurs d'une fonction.}{valfonction1}
-\codeAlgobox{algo_txt/calc_val_fonction_2.algo}{Utilisation d'une boucle TANT\_QUE pour
-calculer les valeurs d'une fonction.}{valfonction2}
-
-\section{Variable indicée}
-
-\codeAlgobox{algo_txt/liste_impair.algo}{Création d'une liste contenant les premiers
-entiers impairs.}{impairs}
-\codeAlgobox{algo_txt/liste_random.algo}{Création d'une liste de nombres
-pseudo-aléatoires.}{random}
-
-\section{Sous programme}
-
-\codeAlgobox{algo_txt/calc_val_fonction_3.algo}{Utilisation d'une boucle TANT\_QUE pour
-calculer les valeurs d'une fonction en appelant une fonction.}{valfonction3}
-
-\section{Premiers petits programmes}
-
-\codeAlgobox{algo_txt/factorielle.algo}{Calcul de la factorielle d'un nombre
-entier.}{factorielle}
-\codeAlgobox{algo_txt/produit.algo}{Calcul d'un produit.}{produit}
-\codeAlgobox{algo_txt/somme.algo}{Calcul d'une somme.}{somme}
-\codeAlgobox{algo_txt/population.algo}{Calcul itératif de la décroissance d'une
-population.}{population}
-\codeAlgobox{algo_txt/minmax.algo}{Recherche du maximum et du minimum.}{minmax}
-\codeAlgobox{algo_txt/marche_aleatoire.algo}{Marche aléatoire d'un point dans un plan 2D.}{marchealeatoire}
-\codeAlgobox{algo_txt/trapeze.algo}{Intégration par la méthode des trapèzes.}{trapeze}
-\codeAlgobox{algo_txt/simpson.algo}{Intégration par la méthode de Simpson.}{Simpson}
+\include{python}
     
-\listoflistings
+\listof{algolisting}{Algorithmes AlgoBox}
+
+\listof{f90listing}{Codes en \textsc{Fortran}}
+
+\listof{pylisting}{Codes en Python}
 
 \end{document}

@@ -44,7 +44,7 @@ références de sites ou d'ouvrages recommandés :
     * Le site d'`AlgoBox <http://www.xm1math.net/algobox/>`_.
     * Le site d'`OpenClassRooms <http://fr.openclassrooms.com/>`_.
     * Le site `developpez.com <http://www.developpez.com/>`_.
-    * C. Delannoy, Programmer en Fortran 90: guide complet (Eyrolles, Paris, 1997).
-    * C. Delannoy, Programmer en langage C: cours et exercices corrigés (Eyrolles, Paris, 2009).
-    * V. L. Goff, Apprenez À Programmer En Python, Livre du Zéro (Simple IT, 2012).
+    * Claude Delannoy, Programmer en Fortran 90: guide complet (Eyrolles, Paris, 1997).
+    * Claude Delannoy, Programmer en langage C: cours et exercices corrigés (Eyrolles, Paris, 2009).
+    * Vincent Le Goff, Apprenez À Programmer En Python, Livre du Zéro (Simple IT, 2012).
 

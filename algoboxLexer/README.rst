@@ -1,5 +1,9 @@
-install
--------
+Pygments lexer for algobox
+-------------------------
+
+This directory contains a `pygments http://pygments.org/`_
+lexer for source code from  `AlgoBox <http://www.xm1math.net/algobox/>`_. Hereafter are
+the instruction for the installation of the lexer.
 
 The following procedure worked on ubuntu 13.10 with python 2.7.
 
