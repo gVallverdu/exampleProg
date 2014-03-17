@@ -1,4 +1,0 @@
-exampleProg
-===========
-
-Programming from examples
