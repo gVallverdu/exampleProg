@@ -1,0 +1,154 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{preambule}[17/03/2014 for exampleProg document]
+
+% ------------------------------------------------
+% General options
+% ------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+
+% ------------------------------------------------
+% divers
+% ------------------------------------------------
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage[fleqn]{amsmath}
+\usepackage{amsfonts, amssymb}
+\setlength{\mathindent}{1cm}
+
+\renewcommand{\footnote}{\alph{thefootnote}}
+\@addtoreset{footnote}{page}
+
+% ------------------------------------------------
+% style
+% ------------------------------------------------
+\usepackage{palatino}
+
+\usepackage{titlesec}
+\titleformat*{\section}{\sffamily\Large\bfseries}
+\titleformat*{\subsection}{\sffamily\large\bfseries}
+\titleformat*{\subsubsection}{\sffamily\bfseries}
+
+\titleformat{\chapter}[display]{\filcenter\sffamily} 
+{\textit{\Large\@title}\\
+\vspace{5mm}%
+{\Large \chaptername~\thechapter}%
+}%
+{1pc}%
+{\titlerule\vspace{1pc}\Huge}%
+[\vspace{1pc}\titlerule\thispagestyle{plain}]
+
+\usepackage{setspace}
+\AtBeginDocument{\onehalfspacing}
+
+\AtBeginDocument{\renewcommand\labelitemi{$\bullet$}}
+\AtBeginDocument{\renewcommand\labelitemii{$\circ$}}
+
+\setlength{\parskip}{1.5ex plus 0.5ex minus 0.5ex}
+\setlength{\parindent}{0em}
+
+\usepackage[top = 2.5cm, left = 2cm, right = 2cm, bottom = 2cm]{geometry}
+
+% ------------------------------------------------
+% page de titre
+% ------------------------------------------------
+\newcommand{\email}[1]{\def\@email{#1}}
+\email{}
+
+\newcommand{\institute}[1]{\def\@institute{#1}}
+\institute{}
+
+\renewcommand{\maketitle}{%
+    \begin{titlepage}
+        \thispagestyle{plain}
+        \sffamily
+        \hfill\@date
+
+        \vspace*{\stretch{1}}
+
+        {\Huge\bfseries \@title}
+
+        \vspace{2cm}
+
+        {\Large\bfseries \@author}
+
+        \vspace{1cm}
+
+        {\large\itshape \@institute}
+
+        \vspace*{\stretch{1}}
+
+        \vfill
+        \parbox[c]{8cm}{\@email}
+        \hfill
+        \parbox[c]{2cm}{\includegraphics[height=2cm]{UPPAcouleur}}
+    \end{titlepage}
+    \thispagestyle{plain}
+}
+
+% ------------------------------------------------
+% new floats
+% ------------------------------------------------
+
+\usepackage{float}
+\floatstyle{plaintop}
+
+\newfloat{algolisting}{H}{loalgo}[chapter]
+\floatname{algolisting}{Algorithme}
+
+\newfloat{f90listing}{H}{lof90}[chapter]
+\floatname{f90listing}{Code \textsc{Fortran}}
+
+\newfloat{pylisting}{H}{lopy}[chapter]
+\floatname{pylisting}{Code Python}
+
+\newfloat{clisting}{H}{loc}[chapter]
+\floatname{clisting}{Code C}
+
+% ------------------------------------------------
+% minted package
+% ------------------------------------------------
+
+\usepackage{minted}
+
+%\usemintedstyle{friendly}
+\usemintedstyle{default}
+%\usemintedstyle{vim}
+
+% ------------------------------------------------
+% insertion de code source
+% ------------------------------------------------
+
+\newcommand{\code}[6]{%
+    \begin{#1}[H]
+        \begin{center}
+        \parbox{1.0\textwidth}{
+            \inputminted[linenos, 
+                         stepnumber = 1,
+                         bgcolor = black!5,
+                         fontsize = \footnotesize,
+                         samepage]{#2}{#4}%
+        }%
+        \end{center}
+        \caption{#5}
+        \label{#3:#6}
+    \end{#1}%
+}
+
+\newcommand{\codeAlgobox}[3]{%
+    \code{algolisting}{algobox}{algo}{../src_simple/algo_txt/#1}{#2}{#3}%
+}
+
+\newcommand{\codeFortran}[3]{%
+    \code{f90listing}{fortran}{f90}{../src_simple/f90/#1}{#2}{#3}%
+}
+
+\newcommand{\codePython}[3]{%
+    \code{pylisting}{python}{py}{../src_simple/python/#1}{#2}{#3}%
+}
+
+\newcommand{\codeC}[3]{%
+    \code{clisting}{c}{c}{../src_simple/c/#1}{#2}{#3}%
+}
+

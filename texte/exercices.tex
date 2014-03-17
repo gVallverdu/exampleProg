@@ -1,0 +1,104 @@
+\chapter{Énoncé des exercices}
+
+Ce chapitre introduit les exemples qui seront présentés par la suite sous forme d'algorithmes et dans les différents langages de programmation. Les énoncés ci-dessous peuvent être vue comme les énoncés d'exercices dont l'objectif serait d'écrire les programmes donnés dans les chapitres suivants.
+
+\section{Lire -- écrire -- calculer}
+
+\begin{enumerate}
+    \item Écrire un programme qui demande à l'utilisateur la longueur et la largeur d'un rectangle et calcule l'aire.
+    \item Écrire un programme qui calcule le reste de la division de deux entiers demandés à l'utilisateur.
+    \item Écrire un programme qui calcule le périmètre d'un cercle après avoir demandé son rayon.
+\end{enumerate}
+
+\section{Faire une condition}
+
+\begin{enumerate}
+    \item Écrire un programme qui demande deux chiffres à l'utilisateur et affiche le plus grand.
+    
+    \item Écrire un programme qui calcule la racine carré d'un nombre demandé à l'utilisateur.
+    
+    \item Écrire un programme qui calcule les racines d'un polynôme du second degré.
+    %
+    \begin{align*}
+        & a x^2 + b x + c = 0 \\
+        & \Delta = b^2 - 4 a c \\
+        &
+        \begin{cases}
+            \Delta > 0 \qquad x = \dfrac{-b \pm \sqrt{\Delta}}{2a} & \text{2 solutions réelles} \\
+            \Delta = 0 \qquad x = \dfrac{-b}{2a} & \text{une unique solution} \\
+            \Delta < 0 \qquad x = \dfrac{-b \pm i\sqrt{|\Delta|}}{2a} & \text{2 solutions complexes}
+        \end{cases}
+    \end{align*}
+\end{enumerate}
+
+\section{Répéter une action}
+
+Les deux exercices suivants consistent à calculer les valeurs d'une fonction de votre choix dans l'intervalle $[-5;5]$ avec
+
+\begin{enumerate}
+    \item un pas de $1$.
+    \item avec un pas de $0.5$.
+\end{enumerate}
+
+\section{Variable indicée}
+
+Les deux exercices suivants ont pour objectif d'introduire l'utilisation des variables indicées ou tableaux.
+
+\begin{enumerate}
+    \item Écrire un programme qui crée une liste contenant les premiers entiers impairs et affiche cette liste.
+    \item Écrire un programme qui crée une liste contenant une série de nombres pseudo-aléatoires et affiche cette liste.
+\end{enumerate}
+
+\section{Sous programmes}
+
+Reprendre l'exercice consistant à calculer les valeurs d'une fonction dans l'intervalle $[-5;5]$ en créant une fonction qui sera appelée pour calculer les valeurs souhaitées.
+
+Les autres exercices pourront être retravailler avec pour objectif de rendre fonctionnel les actions qu'ils réalisent.
+
+\section{Premiers petits programmes}
+
+Les exemples suivants constituent des cas plus concrets pouvant nécessiter d'associer l'écriture d'une condition et d'une boucle. Ils sont classés par ordre de complexité croissante.
+
+\begin{enumerate}
+    \item Écrire un programme qui calcule la factorielle d'un entier naturel.
+    
+    Rappel :
+    \begin{equation*}
+        \begin{cases}
+            n! = 1 \times 2 \times 3 \times \ldots \times n & \forall n \in \mathbb{N}^* \\
+            n! = 1 & n = 0
+        \end{cases}
+    \end{equation*}
+    
+    \item Écrire un programme qui calcule le produit des $n$ premiers entiers impairs.
+    
+    \item Écrire un programme qui calcule la somme des $n$ premiers entiers naturels.
+    
+    \item Une population décroit de 40\% tous les 3 ans. La population étant considérée négligeable lorsqu'elle est inférieure à 0.1\% de sa valeur initiale, au bout de combien d'année l'extinction est-elle atteinte ?
+    
+    \item Écrire un programme qui construit une liste de nombres compris entre 0 et 100 puis cherche le minimum et le maximum dans cette liste.
+    
+    \item La marche aléatoire d'un point peut être modélisée de la façon suivante : 
+    %
+    \begin{equation*}
+        \vec{r}(t + dt) = \vec{r}(t) + a \hat{\vec{R}}
+    \end{equation*}
+    %
+    où $a$ désigne l'amplitude du déplacement aléatoire et $\hat{\vec{R}}$ est un vecteur aléatoire dont les composantes sont comprises entre -1 et 1.
+    
+    Écrire un programme qui met en œuvre une marche aléatoire dans un espace à deux dimensions et affiche à chaque pas de temps les coordonnées du point.
+
+    \item Le nombre $\pi$ peut être calculé par un processus dit de Monte Carlo, mettant en oeuvre le tirage de nombres aléatoires. Le principe est le suivant : La probabilité qu'un point, de coordonnées $(x, y)$, $x\in[0,1]$ et $y\in[0,1]$, choisi aléatoirement, soit dans un cercle de rayon 1 est égale au rapport de l'aire du quart de cercle de rayon 1 compris dans le carré de largeur 1 et l'aire de ce carré. Écrire un programme qui calcule le nombre $\pi$ par cette méthode.
+    
+    \item Écrire un programme qui calcule l'intégrale d'une fonction par la méthode des trapèze.
+    
+    \item Écrire un programme qui calcule l'intégrale d'une fonction par la méthode de Simpson.
+    
+    \item Écrire un programme qui met en œuvre le procédé d'orthogonalisation de Gramm-Schmidt dont voici une brève description : Soit $\vec{u}$ et $\vec{v}$ deux vecteurs quelconques, le vecteur $\vec{v}'$ orthogonal au vecteur $\vec{u}$ est obtenu par :
+    %
+    \begin{equation*}
+        \vec{v}' = \vec{v} - \frac{(\vec{u}.\vec{v})}{||\vec{u}||} \vec{u}
+    \end{equation*}
+\end{enumerate}
+
+    
