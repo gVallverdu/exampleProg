@@ -1,0 +1,28 @@
+// produit  -  11.03.2014
+
+// ******************************************
+// Calcul du produit des n premiers entiers impairs
+// ******************************************
+
+VARIABLES
+  i EST_DU_TYPE NOMBRE
+  n EST_DU_TYPE NOMBRE
+  produit EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  //lecture de n
+  LIRE n
+  AFFICHER "Calcul du produit des entiers impairs entre 1 et "
+  AFFICHER n
+  //initialisation
+  produit PREND_LA_VALEUR 1
+  POUR i ALLANT_DE 3 A n
+    DEBUT_POUR
+    SI (i % 2 == 1) ALORS
+      DEBUT_SI
+      produit PREND_LA_VALEUR produit * i
+      FIN_SI
+    FIN_POUR
+  //affichage du résultat
+  AFFICHER "Résultat = "
+  AFFICHER produit
+FIN_ALGORITHME

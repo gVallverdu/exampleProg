@@ -1,0 +1,35 @@
+// marche_aleatoire  -  11.03.2014
+
+// ******************************************
+// Marche aléatoire dans une plan 2D
+// ******************************************
+
+VARIABLES
+  i EST_DU_TYPE NOMBRE
+  npas EST_DU_TYPE NOMBRE
+  amplitude EST_DU_TYPE NOMBRE
+  x EST_DU_TYPE LISTE
+  y EST_DU_TYPE LISTE
+  wx EST_DU_TYPE NOMBRE
+  wy EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  //paramètres de la marche
+  LIRE npas
+  LIRE amplitude
+  //initialisation
+  x[1] PREND_LA_VALEUR 0
+  y[1] PREND_LA_VALEUR 0
+  //marche aléatoire
+  POUR i ALLANT_DE 2 A npas
+    DEBUT_POUR
+    wx PREND_LA_VALEUR 2. * random() - 1.
+    wy PREND_LA_VALEUR 2. * random() - 1.
+    x[i] PREND_LA_VALEUR x[i - 1] + amplitude * wx
+    y[i] PREND_LA_VALEUR y[i - 1] + amplitude * wy
+    FIN_POUR
+  //représentation de la marche
+  POUR i ALLANT_DE 2 A npas
+    DEBUT_POUR
+    TRACER_SEGMENT (x[i - 1],y[i - 1])->(x[i],y[i])
+    FIN_POUR
+FIN_ALGORITHME

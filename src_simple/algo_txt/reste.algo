@@ -1,0 +1,24 @@
+// reste  -  11.03.2014
+
+// ******************************************
+// Calcul du reste de la division de deux entiers
+// ******************************************
+
+VARIABLES
+  dividende EST_DU_TYPE NOMBRE
+  diviseur EST_DU_TYPE NOMBRE
+  reste EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  //Lecture des valeurs
+  LIRE dividende
+  AFFICHER "dividende = "
+  AFFICHER dividende
+  LIRE diviseur
+  AFFICHER "diviseur = "
+  AFFICHER diviseur
+  //Calcul du reste
+  reste PREND_LA_VALEUR dividende % diviseur
+  //Affichage du resultat
+  AFFICHER "reste = "
+  AFFICHER reste
+FIN_ALGORITHME

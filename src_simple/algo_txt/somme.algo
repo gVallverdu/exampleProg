@@ -1,0 +1,25 @@
+// somme  -  11.03.2014
+
+// ******************************************
+// Calcul de la somme des n premiers entiers
+// ******************************************
+
+VARIABLES
+  n EST_DU_TYPE NOMBRE
+  i EST_DU_TYPE NOMBRE
+  somme EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  //Lecture de n
+  LIRE n
+  AFFICHER "Calcul de la somme des entiers de 1 à "
+  AFFICHER n
+  //initialisation de la somme
+  somme PREND_LA_VALEUR 0
+  POUR i ALLANT_DE 1 A n
+    DEBUT_POUR
+    somme PREND_LA_VALEUR somme + i
+    FIN_POUR
+  //affichage du résultat
+  AFFICHER "Résultat = "
+  AFFICHER somme
+FIN_ALGORITHME

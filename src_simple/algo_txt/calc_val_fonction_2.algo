@@ -1,0 +1,20 @@
+// calc_val_fonction_2  -  11.03.2014
+
+// ******************************************
+// calcule des valeurs de la fonction f(x) = x^2 pour x dans [-5 ; 5]
+// ******************************************
+
+VARIABLES
+  x EST_DU_TYPE NOMBRE
+  pas EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  //initialisation
+  x PREND_LA_VALEUR -5
+  pas PREND_LA_VALEUR 0.5
+  //boucle sur les valeurs de x
+  TANT_QUE (x <= 5) FAIRE
+    DEBUT_TANT_QUE
+    AFFICHERCALCUL x * x
+    x PREND_LA_VALEUR x + pas
+    FIN_TANT_QUE
+FIN_ALGORITHME

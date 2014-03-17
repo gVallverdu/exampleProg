@@ -1,0 +1,20 @@
+// perimetre  -  11.03.2014
+
+// ******************************************
+// Calcul du périmètre d'un cercle
+// ******************************************
+
+VARIABLES
+  rayon EST_DU_TYPE NOMBRE
+  perimetre EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  // lecture du rayon
+  LIRE rayon
+  AFFICHER "rayon = "
+  AFFICHER rayon
+  // calcul du périmètre
+  perimetre PREND_LA_VALEUR 2 * Math.PI * rayon
+  // affichage du résutlat
+  AFFICHER "périmètre = "
+  AFFICHER perimetre
+FIN_ALGORITHME

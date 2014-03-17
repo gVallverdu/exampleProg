@@ -1,0 +1,25 @@
+// liste_impair  -  11.03.2014
+
+// ******************************************
+// Remplissage et affichage d'une liste des 20 premiers entiers impmairs
+// ******************************************
+
+VARIABLES
+  x EST_DU_TYPE LISTE
+  i EST_DU_TYPE NOMBRE
+  n EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  //Nombre d'entier
+  n PREND_LA_VALEUR 20
+  //Remplissage de la liste
+  POUR i ALLANT_DE 0 A n - 1
+    DEBUT_POUR
+    x[i] PREND_LA_VALEUR 2 * i + 1
+    FIN_POUR
+  //Affichage de la liste
+  AFFICHER "Liste des 20 premiers nombres impaires"
+  POUR i ALLANT_DE 0 A n - 1
+    DEBUT_POUR
+    AFFICHER x[i]
+    FIN_POUR
+FIN_ALGORITHME

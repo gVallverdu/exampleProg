@@ -1,0 +1,33 @@
+// population  -  11.03.2014
+
+// ******************************************
+// Une population est réduite de 40% tous les 3 ans. 
+// Au bout de combien d'années la population est négligeable 
+// (inférireure à 0.1% de la population initiale) ?
+// ******************************************
+
+VARIABLES
+  population EST_DU_TYPE NOMBRE
+  an EST_DU_TYPE NOMBRE
+  perte EST_DU_TYPE NOMBRE
+  seuil EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  //initialisation
+  population PREND_LA_VALEUR 100
+  an PREND_LA_VALEUR 0
+  perte PREND_LA_VALEUR 0.4
+  seuil PREND_LA_VALEUR 0.1 / 100 * population
+  //boucle sur les années
+  TANT_QUE (population > seuil) FAIRE
+    DEBUT_TANT_QUE
+    an PREND_LA_VALEUR an + 3
+    population PREND_LA_VALEUR population * (1 - perte)
+    AFFICHER an
+    AFFICHER "  "
+    AFFICHER population
+    FIN_TANT_QUE
+  //résultats
+  AFFICHER "Au bout de "
+  AFFICHER an
+  AFFICHER " ans, la population est inférieure à 0.1% de la population initiale."
+FIN_ALGORITHME

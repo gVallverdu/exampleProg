@@ -1,0 +1,34 @@
+// le_plus_grand  -  11.03.2014
+
+// ******************************************
+// Lire x et y et dire lequel est le plus grand
+// ******************************************
+
+VARIABLES
+  x EST_DU_TYPE NOMBRE
+  y EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  //lecture de x et y
+  LIRE x
+  LIRE y
+  AFFICHER "x = "
+  AFFICHER x
+  AFFICHER "y = "
+  AFFICHER y
+  //test entre x et y
+  SI (x > y) ALORS
+    DEBUT_SI
+    AFFICHER "x est plus grand"
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      SI (y > x) ALORS
+        DEBUT_SI
+        AFFICHER "y est plus grand"
+        FIN_SI
+        SINON
+          DEBUT_SINON
+          AFFICHER "x et y sont égaux"
+          FIN_SINON
+      FIN_SINON
+FIN_ALGORITHME

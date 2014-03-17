@@ -1,0 +1,45 @@
+// simpson  -  11.03.2014
+
+// ***************************************************************
+// Intégration par la méthode de Simpson. L'intégration analytique 
+// de la fonction (x^2 - 3x - 6) e^-x entre 1 et 3 donne comme 
+// application numérique -2.525369
+// ***************************************************************
+
+VARIABLES
+  a EST_DU_TYPE NOMBRE
+  b EST_DU_TYPE NOMBRE
+  npas EST_DU_TYPE NOMBRE
+  integrale EST_DU_TYPE NOMBRE
+  analytique EST_DU_TYPE NOMBRE
+  pas EST_DU_TYPE NOMBRE
+  x EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  //valeur exacte
+  analytique PREND_LA_VALEUR -2.525369
+  //Lecture de l'intervalle
+  LIRE a
+  LIRE b
+  //Nombre de segments
+  LIRE npas
+  //initialisation
+  integrale PREND_LA_VALEUR 0
+  pas PREND_LA_VALEUR (b - a) / npas
+  x PREND_LA_VALEUR a
+  //calcul de l'integrale
+  TANT_QUE (x < b) FAIRE
+    DEBUT_TANT_QUE
+    integrale PREND_LA_VALEUR integrale + pas / 3 * (F1(x) + 4 * F1(x + pas) + F1(x + 2 * pas))
+    x PREND_LA_VALEUR x + 2 * pas
+    FIN_TANT_QUE
+  //résultat
+  AFFICHER "Résultat = "
+  AFFICHER integrale
+  AFFICHER "Résidu = "
+  AFFICHERCALCUL analytique - integrale
+  AFFICHER "Précision = "
+  AFFICHERCALCUL (analytique - integrale) / analytique * 100
+FIN_ALGORITHME
+
+// Fonction numérique utilisée :
+F1(x)=(x * x - 3 * x - 6) * exp(-x)

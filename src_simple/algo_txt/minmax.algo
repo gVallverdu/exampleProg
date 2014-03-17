@@ -1,0 +1,45 @@
+// minmax  -  11.03.2014
+
+// ******************************************
+// Recherche du maximum et du minimum dans une liste pseudo-alétoire
+// ******************************************
+
+VARIABLES
+  i EST_DU_TYPE NOMBRE
+  n EST_DU_TYPE NOMBRE
+  maListe EST_DU_TYPE LISTE
+  mini EST_DU_TYPE NOMBRE
+  maxi EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  //nombre de points
+  LIRE n
+  AFFICHER "n = "
+  AFFICHER n
+  //Remplissage d'une liste pseudo-aléatoire de nombres entre 0 et 100
+  POUR i ALLANT_DE 1 A n
+    DEBUT_POUR
+    maListe[i] PREND_LA_VALEUR 100. * random()
+    AFFICHER maListe[i]
+    FIN_POUR
+  //Recherche du minimum et du maximum
+  //initialisation
+  mini PREND_LA_VALEUR maListe[1]
+  maxi PREND_LA_VALEUR maListe[1]
+  POUR i ALLANT_DE 1 A n
+    DEBUT_POUR
+    //Recherche du minimum
+    SI (maListe[i] < mini) ALORS
+      DEBUT_SI
+      mini PREND_LA_VALEUR maListe[i]
+      FIN_SI
+    //Recherche maximum
+    SI (maListe[i] > maxi) ALORS
+      DEBUT_SI
+      maxi PREND_LA_VALEUR maListe[i]
+      FIN_SI
+    FIN_POUR
+  AFFICHER "maximum = "
+  AFFICHER maxi
+  AFFICHER "minimum = "
+  AFFICHER mini
+FIN_ALGORITHME

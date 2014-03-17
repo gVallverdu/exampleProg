@@ -1,0 +1,41 @@
+// discriminent  -  11.03.2014
+
+// ******************************************
+// Calcul des racines réelles d'un polynome de degré 2
+// ******************************************
+
+VARIABLES
+  a EST_DU_TYPE NOMBRE
+  b EST_DU_TYPE NOMBRE
+  c EST_DU_TYPE NOMBRE
+  delta EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  AFFICHER "On va résoudre l'équation a*x^2 + b*x + c = 0"
+  //Lecture des variables
+  LIRE a
+  LIRE b
+  LIRE c
+  //Calcul du discriminent
+  delta PREND_LA_VALEUR b*b-4*a*c
+  AFFICHER "Delta = "
+  AFFICHER delta
+  //Test du discriminent
+  SI (delta >= 0) ALORS
+    DEBUT_SI
+    SI (delta == 0) ALORS
+      DEBUT_SI
+      AFFICHER "L'équation a une seule solution"
+      AFFICHERCALCUL -b / (2 * a)
+      FIN_SI
+      SINON
+        DEBUT_SINON
+        AFFICHER "L'équation a deux solutions réelles"
+        AFFICHERCALCUL (-b + sqrt(delta)) / (2 * a)
+        AFFICHERCALCUL (-b - sqrt(delta)) / (2 * a)
+        FIN_SINON
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      AFFICHER "L'équation a deux solutions complexes"
+      FIN_SINON
+FIN_ALGORITHME

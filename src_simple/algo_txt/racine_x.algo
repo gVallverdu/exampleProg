@@ -1,0 +1,24 @@
+// racine_x  -  11.03.2014
+
+// ******************************************
+// Calcul de la racine carré de x si x est positif.
+// ******************************************
+
+VARIABLES
+  x EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  // Lecture de x
+  LIRE x
+  AFFICHER "x = "
+  AFFICHER x
+  // test de la valeur de x et calcul de sqrt(x)
+  SI ( x >= 0) ALORS
+    DEBUT_SI
+    AFFICHER "RACINE(x) = "
+    AFFICHERCALCUL sqrt(x)
+    FIN_SI
+    SINON
+      DEBUT_SINON
+      AFFICHER "x est négatif"
+      FIN_SINON
+FIN_ALGORITHME

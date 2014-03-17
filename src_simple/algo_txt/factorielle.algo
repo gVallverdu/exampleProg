@@ -1,0 +1,26 @@
+// factorielle  -  11.03.2014
+
+// ******************************************
+// Calcul de factorielle n
+// ******************************************
+
+VARIABLES
+  i EST_DU_TYPE NOMBRE
+  n EST_DU_TYPE NOMBRE
+  factorielle EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  //lecture de n
+  LIRE n
+  AFFICHER "Calcul de factorielle "
+  AFFICHER n
+  //initialisation
+  factorielle PREND_LA_VALEUR 1
+  // calcul de la factorielle
+  POUR i ALLANT_DE 2 A n
+    DEBUT_POUR
+    factorielle PREND_LA_VALEUR factorielle * i
+    FIN_POUR
+  //affichage du résultat
+  AFFICHER "Résultat = "
+  AFFICHER factorielle
+FIN_ALGORITHME

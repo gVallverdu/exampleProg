@@ -1,0 +1,46 @@
+// schmidt  -  13.03.2014
+
+// ******************************************
+// Procédé d'orthogonalisation de Gram-Schimdt.
+// Soit u et v deux vecteurs. On cherche le vecteur vp le plus proche de v orthogonal à u.
+// ******************************************
+
+VARIABLES
+  i EST_DU_TYPE NOMBRE
+  u EST_DU_TYPE LISTE
+  v EST_DU_TYPE LISTE
+  vp EST_DU_TYPE LISTE
+  scalaire EST_DU_TYPE NOMBRE
+  normu EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  //vecteur u
+  u[1] PREND_LA_VALEUR 1
+  u[2] PREND_LA_VALEUR 0
+  u[3] PREND_LA_VALEUR 0
+  normu PREND_LA_VALEUR sqrt(u[1]*u[1] + u[2]*u[2] + u[3]*u[3])
+  //vecteur v
+  v[1] PREND_LA_VALEUR 1
+  v[2] PREND_LA_VALEUR 2
+  v[3] PREND_LA_VALEUR 3
+  //calcul du produit scalaire
+  scalaire PREND_LA_VALEUR u[1] * v[1] + u[2] * v[2] + u[3] * v[3] 
+  AFFICHER "u.v = "
+  AFFICHER scalaire
+  //orthogonalisation de schmidt
+  SI (scalaire != 0) ALORS
+    DEBUT_SI
+    POUR i ALLANT_DE 1 A 3
+      DEBUT_POUR
+      vp[i] PREND_LA_VALEUR v[i] - scalaire / normu * u[i]
+      FIN_POUR
+    //verification
+    AFFICHER "u.vp = "
+    AFFICHERCALCUL u[1] * vp[1] + u[2] * vp[2] + u[3] * vp[3] 
+    AFFICHER "vp = "
+    POUR i ALLANT_DE 1 A 3
+      DEBUT_POUR
+      AFFICHER vp[i]
+      AFFICHER "  "
+      FIN_POUR
+    FIN_SI
+FIN_ALGORITHME

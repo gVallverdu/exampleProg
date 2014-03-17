@@ -1,0 +1,22 @@
+// liste_random  -  11.03.2014
+
+// ******************************************
+// Remplissage et affichage d'une liste aléatoire de nombre entre -1 et 1
+// ******************************************
+
+VARIABLES
+  i EST_DU_TYPE NOMBRE
+  n EST_DU_TYPE NOMBRE
+  maListe EST_DU_TYPE LISTE
+  x EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  //Choix du nombre de valeurs
+  n PREND_LA_VALEUR 15
+  //Remplissage et affichage de la liste
+  POUR i ALLANT_DE 1 A n
+    DEBUT_POUR
+    x PREND_LA_VALEUR 2. * random() - 1.
+    maListe[i] PREND_LA_VALEUR x
+    AFFICHER x
+    FIN_POUR
+FIN_ALGORITHME

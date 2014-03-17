@@ -1,0 +1,40 @@
+// pi  -  14.03.2014
+
+// ******************************************
+// Calcul du nombre pi par Monte Carlo.
+// Principe : La probabilité qu'un point de coordonnées (x,y) 
+// avec x et y dans l'intervalle [0;1] soit dans le quart de 
+// cercle de centre (0,0) et de rayon 1 est égal au rapport des 
+/// aires du quart de cercle de rayon 1 et du carré de largeur 1 
+// soit pi/4.
+******************************************
+
+VARIABLES
+  x EST_DU_TYPE NOMBRE
+  y EST_DU_TYPE NOMBRE
+  n EST_DU_TYPE NOMBRE
+  ntirage EST_DU_TYPE NOMBRE
+  i EST_DU_TYPE NOMBRE
+DEBUT_ALGORITHME
+  //Lecture du nombre de tirage
+  LIRE ntirage
+  //initialisation
+  n PREND_LA_VALEUR 0
+  //calcul du nombre pi
+  POUR i ALLANT_DE 1 A ntirage
+    DEBUT_POUR
+    //tirage d'un point dans le carré de coté 1
+    x PREND_LA_VALEUR random()
+    y PREND_LA_VALEUR random()
+    SI (x*x + y*y < 1) ALORS
+      DEBUT_SI
+      n PREND_LA_VALEUR n + 1
+      TRACER_POINT (x,y)
+      FIN_SI
+    FIN_POUR
+  //Affichage des résultats
+  AFFICHER "pi = "
+  AFFICHERCALCUL 4.0 * n / ntirage
+  AFFICHER "% d'erreur = "
+  AFFICHERCALCUL (Math.PI - 4.0 * n / ntirage) / Math.PI * 100.
+FIN_ALGORITHME
