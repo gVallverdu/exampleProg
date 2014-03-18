@@ -12,4 +12,5 @@ rm -v exampleProg.toc
 rm -v exercices.aux
 rm -v fortran.aux
 rm -v python.aux
+rm -v introduction.aux
 
