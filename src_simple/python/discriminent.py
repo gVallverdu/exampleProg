@@ -3,6 +3,7 @@
 
 """ discriminent  -  11.03.2014 """
 
+from __future__ import print_function
 from math import sqrt
 
 def discriminent(a, b, c):

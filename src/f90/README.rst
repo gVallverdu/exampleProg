@@ -20,4 +20,10 @@ mod_integration
 mod_proba
     Un module avec des fonctions pour les probabilités (arrangement,
     factorielle, combinaison).
+    
+newton_raphson
+    Un module avec une subroutine qui implémente la méthode de Newton Raphson.
+    
+regLin
+    Un programme et des données pour réaliser une régression linéaire.
 
