@@ -1,14 +1,11 @@
 #!/usr/bin/env python
 # -*- coding=utf-8 -*-
 
-""" produit  -  11.03.2014 """
+""" produit  -  04/02/2016 """
 
-def prog_produit():
+
+def prog_produit(n):
     """ Calcul du produit des n premiers entiers impairs """
-
-    # lecture de n
-    n = int(raw_input("entrer n : "))
-    print("Calcul du produit des entiers impairs entre 1 et {0}".format(n))
 
     # initialisation
     produit = 1
@@ -18,13 +15,26 @@ def prog_produit():
         if i % 2 == 1:
             produit *= i
 
-    # autre methode
+    # retour
+    return produit
+
+
+def prog_produit2(n):
+    """ Calcul du produit des n premiers entiers impairs """
+
+    # initialisation
     produit = 1
+
+    # calcul
     for i in range(3, n + 1, 2):
         produit *= i
 
-    # affichage du résultat
-    print("Résultat = {0}".format(produit))
+    # retour
+    return produit
 
 if __name__ == "__main__":
-    prog_produit()
+    # lecture de n
+    n = int(input("entrer n : "))
+    print("Calcul du produit des ", n, " premiers entiers impairs  ")
+    produit = prog_produit2(n)
+    print("Résultat = ", produit)

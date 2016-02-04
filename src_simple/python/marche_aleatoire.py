@@ -5,10 +5,11 @@
 
 from random import random
 
+
 def marche_aleatoire():
     """ Marche aléatoire dans un plan 2D """
 
-    # nombres de pas 
+    # nombres de pas
     npas = 1000
     amplitude = .1
 
@@ -26,11 +27,13 @@ def marche_aleatoire():
         wy = 2. * random() - 1.
         x.append(x[i] + amplitude * wx)
         y.append(y[i] + amplitude * wy)
-        
+
     # représentation avec matplotlib
     import matplotlib.pyplot as plt
 
-    plt.plot(x, y, "r-", label = "trajectoire")
+    plt.plot(x, y, "r-", label="trajectoire")
+    plt.plot(x[0], y[0], "go", label="start")
+    plt.plot(x[-1], y[-1], "bo", label="end")
     plt.title("Marche aleatoire dans un plan 2D")
     plt.axes().set_aspect("equal")
     plt.grid()
@@ -41,4 +44,3 @@ def marche_aleatoire():
 
 if __name__ == "__main__":
     marche_aleatoire()
-

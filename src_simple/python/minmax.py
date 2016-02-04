@@ -5,39 +5,72 @@
 
 from random import random
 
-def minimax(maListe):
-    """ Recherche du maximum et du minimum dans une liste pseudo-alétoire """
 
-    # recherche du maximum et du minimum
+def minimax(maListe):
+    """ Recherche du maximum et du minimum dans maListe """
+
     # initialisation
     mini = maListe[0]
     maxi = maListe[0]
 
-    for i in range(n):
+    for element in maListe:
         # recherche du minimum
-        if maListe[i] < mini:
-            mini = maListe[i]
+        if element < mini:
+            mini = element
 
         # recherche du maximum
-        if maListe[i] > maxi:
-            maxi = maListe[i]
+        if element > maxi:
+            maxi = element
 
-    print("maximum = {0}".format(maxi))
-    print("minimum = {0}".format(mini))
+    # retour du résultat
+    return mini, maxi
 
-    # avec les fonctions min() et max()
-    print("maximum = {0}".format(max(maListe)))
-    print("minimum = {0}".format(min(maListe)))
+
+def minimax2(maListe):
+    """ Recherche du maximum et du minimum dans maListe """
+
+    # initialisation
+    mini = maListe[0]
+    maxi = maListe[0]
+
+    for element in maListe:
+        mini = min(mini, element)
+        maxi = max(maxi, element)
+
+    # retour du résultat
+    return mini, maxi
+
+
+def minimax3(maListe):
+    """ Recherche du maximum et du minimum dans maListe """
+    return min(maListe), max(maListe)
 
 if __name__ == "__main__":
     # nombre de points
-    n = int(raw_input("entrer n : "))
-    print("n = {0}".format(n))
+    n = int(input("nombre de points : "))
+    print("n = ", n)
 
     # remplissage d'une liste pseudo aleatoire de nombres entre 0 et 100
     maListe = [100. * random() for i in range(n)]
-    # ou avec des entiers
+    # ou avec numpy
     # maListe = [randint(0, 100) for i in range(n)]
 
-    minimax(maListe)
+    mini, maxi = minimax(maListe)
+    print("maximum = ", maxi)
+    print("minimum = ", mini)
 
+    mini, maxi = minimax2(maListe)
+    print("maximum = ", maxi)
+    print("minimum = ", mini)
+
+    mini, maxi = minimax3(maListe)
+    print("maximum = ", maxi)
+    print("minimum = ", mini)
+
+    import cProfile
+    print("--------")
+    print(cProfile.run("minimax(maListe)"))
+    print("--------")
+    print(cProfile.run("minimax2(maListe)"))
+    print("--------")
+    print(cProfile.run("minimax3(maListe)"))

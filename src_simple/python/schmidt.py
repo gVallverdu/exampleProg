@@ -5,14 +5,15 @@
 
 from math import sqrt
 
+
 def schmidt():
     """ Procédé d'orthogonalisation de Gram-Schimdt.
-        Soit u et v deux vecteurs. On cherche le vecteur vp le plus 
+        Soit u et v deux vecteurs. On cherche le vecteur vp le plus
         proche de v orthogonal à u. """
 
     # vecteur u
-    u = [1., 0., 0.]
-    normu = sqrt(sum([ui**2 for ui in u]))
+    u = [1., 1, 1.]
+    normu = sum([ui**2 for ui in u])
 
     # vecteur v
     v = [1., 2., 3.]
